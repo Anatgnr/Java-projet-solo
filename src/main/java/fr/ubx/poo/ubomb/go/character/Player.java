@@ -69,6 +69,10 @@ public class Player extends GameObject implements Movable, TakeVisitor {
 
     public final boolean canMove(Direction direction) {
         // Need to be updated ;-)
+        Position np = direction.nextPosition(getPosition());
+        int npX = direction.nextPosition(getPosition().getX());
+        int npY = direction.nextPosition(getPosition().getY());
+
         return inside(direction.nextPosition(getPosition()));
     }
 
